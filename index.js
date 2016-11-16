@@ -1,5 +1,5 @@
 var ws = require('pull-ws')
-var WebSocket = require('ws')
+var WebSocket = global.WebSocket || require('ws')
 var url = require('url')
 var http = require('http')
 var https = require('https')

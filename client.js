@@ -1,6 +1,6 @@
 'use strict';
 var ws = require('pull-ws')
-var WebSocket = require('ws')
+var WebSocket = global.WebSocket || require('ws')
 var wsurl = require('./ws-url')
 
 function isFunction (f) {

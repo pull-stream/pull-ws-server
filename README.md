@@ -1,5 +1,7 @@
 # pull-ws-server
 
+use [pull-ws](https://github.com/pull-stream/pull-ws) instead.
+
 create pull stream websockets, servers, and clients.
 
 ## example

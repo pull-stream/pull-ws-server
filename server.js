@@ -4,6 +4,8 @@ var url = require('url')
 var http = require('http')
 var https = require('https')
 
+var Server = WebSocket.Server || require('ws').Server
+
 exports.connect = require('./client').connect
 
 var EventEmitter = require('events').EventEmitter
@@ -31,7 +33,7 @@ exports.createServer = function (opts, onConnection) {
   var server = opts.server ||
     (opts.key && opts.cert ? https.createServer(opts) : http.createServer())
 
-  var wsServer = new WebSocket.Server({
+  var wsServer = new Server({
     server: server,
     verifyClient: opts.verifyClient
   })
